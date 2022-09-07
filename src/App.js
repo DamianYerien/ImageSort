@@ -11,7 +11,7 @@ function App() {
   const onSortEnd = ({ oldIndex, newIndex }) => {
     setItems(prevItem => (arrayMoveImmutable(prevItem, oldIndex, newIndex)));
   };
-  const entry = input ? input.input : null;
+  const entry = input ? input.input : "";
   const entryArr = entry.split(",");
   const entryClean = entryArr.map(e => e.replace('[', '').replace(']', '').replace('"', '').replace('\"', ''));
 
