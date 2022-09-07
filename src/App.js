@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { arrayMoveImmutable } from 'array-move';
 import SortableList from './SortableList';
+import style from "./App.module.css"
+
 
 function App() {
   const [items, setItems] = useState([]);
@@ -42,10 +44,19 @@ const probar = items.map(e => e.toString())
     </form>
     <br/>
     <br/>
-      {items && items.map( e =>(
-        <>"{e}",<br/></>
+    <h2>Resultado</h2>
+   
+      {items && items.map( (e,index) =>(
+        <div className={style.main}>
+        <div className={style.idx}>
+          {index+1}
+        </div>  
+        <div className={style.url}>"{e}" ,<br/></div>
+        </div>
       ))}
-      <h3>Ordenar Imagenes</h3>
+       <br/>
+    <br/>
+      <h2>Ordenar Imagenes</h2>
       <SortableList items={items} onSortEnd={onSortEnd} />
     </div>
   );

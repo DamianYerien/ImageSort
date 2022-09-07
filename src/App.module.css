@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.idx {
+    margin-right: 20px;
+    position: absolute;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+}
+
+.url {
+    overflow-x: unset;
+    margin-left: 30px;
+}
+.li{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    padding-bottom: 10px;
+}
