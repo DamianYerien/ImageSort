@@ -57,7 +57,7 @@ function App() {
       <br />
       <br />
       <h2>Resultado</h2>
-      <div>
+      <div className={style.copy}>
 
         {items && items.map((e, index) => (
           <div key={index} className={style.main}>

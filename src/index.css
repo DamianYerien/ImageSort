@@ -14,3 +14,13 @@ li {
   margin: 3px;
   width: 1200px;
 }
+h2{
+  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+}
+body{
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+}
