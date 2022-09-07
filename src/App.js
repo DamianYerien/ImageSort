@@ -11,7 +11,7 @@ function App() {
   const onSortEnd = ({ oldIndex, newIndex }) => {
     setItems(prevItem => (arrayMoveImmutable(prevItem, oldIndex, newIndex)));
   };
-  const entry = input ? input.input : "g,g";
+  const entry = input ? input.input : null;
   const entryArr = entry.split(",");
   const entryClean = entryArr.map(e => e.replace('[', '').replace(']', '').replace('"', '').replace('\"', ''));
 
@@ -49,7 +49,7 @@ function App() {
     <div className="App">
       <form onSubmit={(e) => handleSubmit(e)} >
         <label>Ingrese URL de las imagenes:
-          <textarea className={style.input} type="text" onChange={(e) => handleInputChange(e)} name='name' value={input.input} placeholder='Ingrese las images con comillas y separadas por coma' />
+          <textarea className={style.input} type="text" onChange={(e) => handleInputChange(e)} name='name' value={input.input} placeholder='Ingrese las imágenes con comillas y separadas por coma' />
           <button type="submit" className={style.inputcargar}>Cargar</button>
           <button onClick={(e) => handleReset(e)} className={style.inputreset}>Reset</button>
         </label>
