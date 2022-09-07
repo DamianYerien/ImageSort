@@ -38,13 +38,20 @@ function App() {
     )
   }
 
+  function handleReset(e) {
+    e.preventDefault();
+    setItems([])
+    setInput({input: ""})
+  }
+
 
   return (
     <div className="App">
       <form onSubmit={(e) => handleSubmit(e)} >
         <label>Ingrese URL de las imagenes:
-          <input type="text" onChange={(e) => handleInputChange(e)} name='name' value={input} placeholder='Ingrese las images con comillas y separadas por coma' />
-          <button type="submit">Cargar</button>
+          <textarea className={style.input} type="text" onChange={(e) => handleInputChange(e)} name='name' value={input.input} placeholder='Ingrese las images con comillas y separadas por coma' />
+          <button type="submit" className={style.inputcargar}>Cargar</button>
+          <button onClick={(e) => handleReset(e)} className={style.inputreset}>Reset</button>
         </label>
       </form>
       <br />
