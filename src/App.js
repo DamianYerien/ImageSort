@@ -11,12 +11,12 @@ function App() {
   const onSortEnd = ({ oldIndex, newIndex }) => {
     setItems(prevItem => (arrayMoveImmutable(prevItem, oldIndex, newIndex)));
   };
- const org = input?input.input:"g,g"
-   const joda = org.split(",")
+ const entry = input?input.input:"g,g"
+   const entryArr = entry.split(",")
 
-   const lcds = joda.map(e => e.replace('"', ''))
-   const otra = lcds.map(e => e.replace('\"', ''))
-   const nueva = otra.map(e => e.trim())
+   const entryClean = entryArr.map(e => e.replace('"', ''))
+   const newEntryClean = entryClean.map(e => e.replace('\"', ''))
+   const finalEntry = newEntryClean.map(e => e.trim())
 
   function handleInputChange(e) {
     setInput({
@@ -28,12 +28,11 @@ function App() {
 function handleSubmit(e) {
   e.preventDefault();
   setItems(
-    nueva
+    finalEntry
   )  
 }
 
-const probar = items.map(e => e.toString())
- console.log( probar)
+
   return (
     <div className="App">
       <form onSubmit={(e) => handleSubmit(e)} >
