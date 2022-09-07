@@ -5,6 +5,7 @@ import style from "./App.module.css"
 const SortableItem = (props) => {
   return <li>
     <div className={style.li}>
+    <button className={style.btnSortList} id={props.id} onClick={(e) => props.handleDelete(e)} >Delete</button>
     <p>{props.idx +1}</p>
     <p>{props.value}</p>
     </div>

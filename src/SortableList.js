@@ -3,11 +3,12 @@ import SortableItem from './SortableItem';
 import { SortableContainer } from 'react-sortable-hoc';
 
 
+
 const SortableList = (props) => {
   return (
     <ul>
       {props.items.map((value, index) => (
-        <SortableItem key={`item-${index}`} index={index} idx={index} value={value} />
+        <SortableItem key={`item-${index}`} id={index} index={index} handleDelete={props.handleDelete} idx={index} value={value} />
       ))}
     </ul>
   );
