@@ -60,3 +60,29 @@
     color: red;
     font-weight: bold;
 }
+.copy{
+    width: 800px;
+    margin-left: 20px;
+    user-select:all;
+    -webkit-user-select:text;
+    -moz-user-select:all;
+}
+.title{
+    display: flex;
+    flex-direction: row; 
+}
+.copybtn{
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    color: rgb(97, 151, 97);
+    font-weight: bold;
+    margin-top:10px ;
+    margin-left: 40px;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}

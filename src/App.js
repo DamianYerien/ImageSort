@@ -41,9 +41,18 @@ function App() {
   function handleReset(e) {
     e.preventDefault();
     setItems([])
-    setInput({input: ""})
+    setInput({ input: "" })
   }
-
+  function copiarAlPortapapeles() {
+    var enlace = document.getElementById("enlace");
+    var inputFalso = document.createElement("input");
+    inputFalso.setAttribute("value", enlace.innerHTML);
+    document.body.appendChild(inputFalso);
+    inputFalso.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputFalso);
+    alert("Copiado al portapapeles!");
+  }
 
   return (
     <div className="App">
@@ -56,19 +65,24 @@ function App() {
       </form>
       <br />
       <br />
-      <h2>Resultado</h2>
-      <div className={style.copy}>
+      <div className={style.title}>
+        <h2>Resultado</h2>
+        <button className={style.copybtn} onClick={(e) => copiarAlPortapapeles(e)}>Copiar</button>
+      </div>
+      <div className={style.links}>
+      <div>
+        {items && items.map((e, index) => (
+          <div>{index+1}</div>
+        ))}
+      </div>
+      <div id="enlace" className={style.copy}>
 
         {items && items.map((e, index) => (
-          <div key={index} className={style.main}>
-            <div className={style.idx}>
-              {index + 1}
-            </div>
-            {index === 0 ? <div className={style.url}>["{e}",<br /></div>
-              : index === items.length - 1 ? <div className={style.url}>"{e}"]<br /></div>
-                : <div className={style.url}>"{e}",<br /></div>}
-          </div>
+
+          index === 0 ? `["${e}",\n` : index === items.length - 1 ? `"${e}"]` : `"${e}",\n`
+
         ))}
+      </div>
       </div>
       <br />
       <br />
