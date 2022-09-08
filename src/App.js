@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { arrayMoveImmutable } from 'array-move';
 import SortableList from './SortableList';
 import style from "./App.module.css"
+import swal from 'sweetalert';
+
 
 
 function App() {
@@ -51,7 +53,16 @@ function App() {
     inputFalso.select();
     document.execCommand("copy");
     document.body.removeChild(inputFalso);
-    alert("Copiado al portapapeles!");
+    //alert("Copiado al portapapeles!");
+    swal({
+      title: 'Copiado al portapapeles',
+      text: ':)',
+      icon: 'success',
+      timer: 1300,
+      buttons: false,
+  })
+
+  
   }
 
   return (
